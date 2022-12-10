@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
-import Pokedex_logo from './images/Pokedex_logo.png'
+import Pokedex_logo from "./images/Pokedex_logo.png";
 
 class App extends Component {
   constructor() {
@@ -11,7 +11,6 @@ class App extends Component {
       nextUrl: "",
       prevUrl: "",
     };
-
   }
 
   componentDidMount() {
@@ -57,7 +56,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <img src={Pokedex_logo} alt='pokedex-logo' className="pokedex-logo"/>
+        <img src={Pokedex_logo} alt="pokedex-logo" className="pokedex-logo" />
+        <div className="search-container"> </div>
         <CardList pokemon={this.state.pokemon} />
       </div>
     );
@@ -81,8 +81,8 @@ class App extends Component {
           }
 
           this.setState({
-            pokemon: this.state.pokemon.concat(pokemons)
-          })
+            pokemon: this.state.pokemon.concat(pokemons),
+          });
         })
         .catch((error) => {
           console.error(error);
