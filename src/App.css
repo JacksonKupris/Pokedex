@@ -16,3 +16,9 @@ body {
   margin-bottom: 50px;
   font-size: 76px;
 }
+
+.pokedex-logo{
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+}

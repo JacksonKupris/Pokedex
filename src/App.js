@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
+import Pokedex_logo from './images/Pokedex_logo.png'
 
 class App extends Component {
   constructor() {
@@ -56,6 +57,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <img src={Pokedex_logo} alt='pokedex-logo' className="pokedex-logo"/>
         <CardList pokemon={this.state.pokemon} />
       </div>
     );
