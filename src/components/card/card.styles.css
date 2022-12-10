@@ -1,0 +1,35 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #96b8c0;
+  border: 1px solid grey;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+.poke-name{
+    padding: 0px;
+    margin: 0px;
+}
+.sprite {
+  height: 150px;
+  width: 150px;
+}
+.type1{
+    padding: 0px;
+    margin: 0px;
+}
+
+.height-weight{
+    padding: 0px;
+    margin: 0px;
+}

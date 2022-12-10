@@ -1,25 +1,97 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Component } from "react";
+import CardList from "./components/card-list/card-list.component";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pokemon: [],
+      nextUrl: "",
+      prevUrl: "",
+    };
+
+  }
+
+  componentDidMount() {
+    const baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=16";
+    try {
+      fetch(baseUrl)
+        .then((response) => {
+          const responseJson = response.json();
+
+          return responseJson;
+        })
+        .then(async (data) => {
+          this.setState({ nextUrl: data.next });
+          this.setState({ prevUrl: data.prev });
+
+          const pokemons = data.results;
+          for (const pokemon of pokemons) {
+            pokemon.data = await fetch(pokemon.url).then((res) => res.json());
+          }
+          this.setState(
+            () => {
+              return { pokemon: pokemons };
+            },
+            () => {}
+          );
+          window.onscroll = () => {
+            if (
+              window.innerHeight + document.documentElement.scrollTop ===
+              document.documentElement.offsetHeight
+            ) {
+              this.fetchAPI(this.state.nextUrl);
+            }
+          };
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <CardList pokemon={this.state.pokemon} />
+      </div>
+    );
+  }
+  fetchAPI(url) {
+    const baseUrl = url;
+    try {
+      fetch(baseUrl)
+        .then((response) => {
+          const responseJson = response.json();
+
+          return responseJson;
+        })
+        .then(async (data) => {
+          this.setState({ nextUrl: data.next });
+          this.setState({ prevUrl: data.prev });
+
+          const pokemons = data.results;
+          for (const pokemon of pokemons) {
+            pokemon.data = await fetch(pokemon.url).then((res) => res.json());
+          }
+
+          this.setState({
+            pokemon: this.state.pokemon.concat(pokemons)
+          })
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 }
 
 export default App;
+
+// Need to add to the state the new pokemon that are being loaded
+// with fetchAPI(). Currently it is overwriting the previous state
