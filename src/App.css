@@ -1,12 +1,13 @@
 .App {
   text-align: center;
   padding-top: 40px;
-  background-color: #5A37B4;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #5A37B4;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

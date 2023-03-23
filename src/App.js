@@ -1,3 +1,8 @@
+/* 
+TODO: Add a loading screen for while it is loading the next API get
+TODO: Do better DRY so that the component did mount is not repeated down below
+*/
+
 import "./App.css";
 import React, { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
