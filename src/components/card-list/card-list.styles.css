@@ -1,8 +1,19 @@
-.card-list{
-    width: 85vw;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+.card-list {
+  width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 5rem;
+  justify-content: center;
+  padding-bottom: 5em;
 }
 
+@media (width <= 420px) {
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

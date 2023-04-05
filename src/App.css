@@ -1,3 +1,12 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .App {
   text-align: center;
   padding-top: 40px;
@@ -6,11 +15,12 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #5A37B4;
+  background-color: #231955;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  font-size: 62.5%;
 }
 
 .app-title {
@@ -19,8 +29,18 @@ body {
   font-size: 76px;
 }
 
-.pokedex-logo{
+.pokedex-logo {
   margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 30px;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (width <= 500px) {
+  .pokedex-logo {
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+  }
 }

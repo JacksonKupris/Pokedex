@@ -12,8 +12,8 @@ class CardList extends Component {
             <Card
               name={pokemon.name}
               id={pokemon.data.id}
-              weight={Math.round(pokemon.data.weight/10*2.2)}
-              height={Math.round(pokemon.data.height/10*3.28084)}
+              weight={Math.round((pokemon.data.weight / 10) * 2.2)}
+              height={Math.round((pokemon.data.height / 10) * 3.28084)}
               sprite={pokemon.data.sprites.front_default}
               type1={pokemon.data.types[0].type.name}
             />

@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=16";
+    const baseUrl = "https://pokeapi.co/api/v2/pokemon/?limit=27";
     try {
       fetch(baseUrl)
         .then((response) => {
@@ -67,6 +67,7 @@ class App extends Component {
       </div>
     );
   }
+
   fetchAPI(url) {
     const baseUrl = url;
     try {
