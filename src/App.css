@@ -7,6 +7,10 @@
   text-transform: uppercase;
 }
 
+:root{
+  color-scheme: dark light
+}
+
 .App {
   text-align: center;
   padding-top: 40px;
