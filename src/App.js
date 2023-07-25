@@ -25,29 +25,28 @@ const App = () => {
       setLoading(true);
     }
   };
+
   const sort = async (arr) => {
     try {
-        let i, j, temp;
+      let i, j, temp;
 
-        for (i = 0; i < arr.length; i++) {
-            for (j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-  
-                    temp = await arr[i];
-                    arr[i] = await arr[j];
-                    arr[j] = await temp;
-                }
-            }
+      for (i = 0; i < arr.length; i++) {
+        for (j = i + 1; j < arr.length; j++) {
+          if (arr[i] > arr[j]) {
+            temp = await arr[i];
+            arr[i] = await arr[j];
+            arr[j] = await temp;
+          }
         }
-  
-        // Returns the sorted array
-        return arr;
+      }
+
+      // Returns the sorted array
+      return arr;
+    } catch (e) {
+      console.error(e);
     }
-    catch (e) {
-  
-        console.error(e)
-    }
-}
+  };
+
   async function getPokemons(url) {
     const baseUrl = url;
     try {
@@ -60,7 +59,7 @@ const App = () => {
         .then(async (data) => {
           setNextUrl(data.next);
           const pokemons = data.results;
-          const sortedPokemon = await sort(pokemons)
+          const sortedPokemon = await sort(pokemons);
           setPokemonArray(sortedPokemon);
         })
         .then(() => {
