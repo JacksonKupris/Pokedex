@@ -7,10 +7,6 @@
   text-transform: uppercase;
 }
 
-:root{
-  color-scheme: dark light
-}
-
 .App {
   text-align: center;
   padding-top: 40px;
@@ -35,15 +31,17 @@ body {
 
 .pokedex-logo {
   margin-top: 0px;
+  height: auto;
   padding-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2.5rem;
   justify-content: center;
   align-items: center;
 }
 
 @media (width <= 500px) {
   .pokedex-logo {
-    height: 10rem;
+    height: 25em;
+    padding-bottom: 10em;
     justify-content: center;
     align-items: center;
   }

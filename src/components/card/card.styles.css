@@ -24,7 +24,7 @@
 }
 
 .poke-name,
-.type1,
+.types,
 .height-weight {
   color: #e8aa42;
 }
@@ -35,6 +35,7 @@
 }
 .type1,
 .height-weight {
+  font-size: small;
   padding: 0.25rem;
   margin: 0;
 }
