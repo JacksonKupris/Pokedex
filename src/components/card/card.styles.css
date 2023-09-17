@@ -10,13 +10,11 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-
 }
 
 .card-container:hover {
   transform: scale(1.05);
-  color: #e8aa42;
-  box-shadow:0px 0px 15px #e8aa42;
+  box-shadow: 0px 0px 15px; 
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
@@ -34,8 +32,77 @@
   width: 9.375em;
 }
 .type1,
+.type2,
 .height-weight {
   font-size: small;
   padding: 0.25rem;
   margin: 0;
+}
+
+.type-normal {
+  color: #a8a878;
+}
+
+.type-fire {
+  color: #f08030;
+}
+
+.type-water {
+  color: #6890f0;
+}
+
+.type-electric {
+  color: #f8d030;
+}
+
+.type-grass {
+  color: #78c850;
+}
+
+.type-ice {
+  color: #98d8d8;
+}
+
+.type-fighting {
+  color: #c03028;
+}
+
+.type-poison {
+  color: #a040a0;
+}
+
+.type-ground {
+  color: #e0c068;
+}
+
+.type-flying {
+  color: #a890f0;
+}
+
+.type-psychic {
+  color: #f85888;
+}
+
+.type-bug {
+  color: #a8b820;
+}
+
+.type-rock {
+  color: #b8a038;
+}
+
+.type-ghost {
+  color: #705898;
+}
+
+.type-dark {
+  color: #705848;
+}
+
+.type-steel {
+  color: #b8b8d0;
+}
+
+.type-fairy {
+  color: #ee99ac;
 }
